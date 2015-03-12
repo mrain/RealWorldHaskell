@@ -29,4 +29,4 @@ myTranspose content = unlines . recur $ lines content
     where emptyHead str = if null str then ' ' else head str
           emptyTail str = if null str then "" else tail str
           recur xs = if all null xs then []
-                           else (map emptyHead xs):(recur $ (reverse . (dropWhile null) . reverse) (map emptyTail xs))
+                           else (map emptyHead xs):(recur $ (filter (not . null)) (map emptyTail xs))
