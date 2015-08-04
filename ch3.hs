@@ -54,3 +54,4 @@ getDirections :: [Point] -> [Direction]
 getDirections xs
 	| length xs < 3		= []
 	| otherwise			= (getDirection (head xs) (head.tail $ xs) (head.tail.tail $ xs)):(getDirections $ tail xs)
+

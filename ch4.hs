@@ -52,3 +52,4 @@ groupBy_fold f xs = foldr comb [] xs
 
 any_fold f xs = foldl (flip ((||) . f)) False xs
 cycle_fold xs = foldl (flip (\x->(++) xs)) [] [1..]
+
